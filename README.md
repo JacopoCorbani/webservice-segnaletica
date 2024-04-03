@@ -10,11 +10,23 @@ Accedere al db e lanciare lo script sql presente nella cartella migrations per l
 2. **Variabili del programma**
 Copiare il file configureexample.php nel file config.php quindi aprirlo e valorizzare i parametri di connessione al DB
 
-## Endpoint implementati:
+## data structure
 
--- return all records: GET /segnali
+```
+{
+    "id": value,
+    "nome": "value",
+    "descrizione": "value",
+    "id_categoria": value,
+    "percorso_immagine": "value"
+}
+```
 
--- return a specific record: GET /segnali/{id}
+## data return:
+
+1. return all records: GET /segnali
+
+2. return a specific record: GET /segnali/{id}
 
 
 ## Note:
