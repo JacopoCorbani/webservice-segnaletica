@@ -12,34 +12,9 @@ Copiare il file configureexample.php nel file config.php quindi aprirlo e valori
 
 ## Endpoint implementati:
 
-// return all records
-GET /segnali
+-- return all records: GET /segnali
 
-// return a specific record
-GET /segnali/{id}
-
-// create a new record
-POST /person
-Payload: 
-```
-{
-    "firstname": "value",
-    "lastname": "value"
-}
-```
-
-// update an existing record
-PUT /person/{id}
-Payload: 
-```
-{
-    "firstname": "value",
-    "lastname": "value"
-}
-```
-
-// delete an existing record
-DELETE /person/{id}
+-- return a specific record: GET /segnali/{id}
 
 
 ## Note:
