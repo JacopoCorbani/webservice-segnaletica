@@ -9,7 +9,7 @@ Accedere al db e lanciare lo script sql presente nella cartella migrations per l
 Copiare il file configureexample.php nel file config.php quindi aprirlo e valorizzare i parametri di connessione al DB
 
 ## data structure
-
+1. Segnali
 ```
 {
     "id": value,
@@ -19,14 +19,29 @@ Copiare il file configureexample.php nel file config.php quindi aprirlo e valori
     "percorso_immagine": "value"
 }
 ```
+2. Categorie
+```
+{
+    "id": value,
+    "nome": value
+}
+```
+
 
 ## data return:
 
+### Segnali
 1. return all records: GET /segnali
 
 2. return a specific record: GET /segnali/{id}
 
+### Categorie
+1. return all records: GET /categorie
+
+2. return a specific record: GET /categorie/{id}
+
 ## data input
+### Segnali
 1. create a new record: POST /segnali
 ```
 {
@@ -34,6 +49,12 @@ Copiare il file configureexample.php nel file config.php quindi aprirlo e valori
     "descrizione": "value",
     "id_categoria": value,
     "percorso_immagine": "value"
+}
+```
+### Categorie
+```
+{
+    "nome": value
 }
 ```
 

@@ -1,5 +1,6 @@
 <?php
 require('../src/Controller/SegnaliController.php');
+require('../src/Controller/CategorieController.php');
 require('../src/System/DatabaseConnector.php');
 
 $dbConnection = (new DatabaseConnector())->getConnection();
@@ -15,18 +16,30 @@ $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $uri = explode( '/', $uri );
 
 
-if ($uri[1] !== 'segnali') {
+if ($uri[1] == 'segnali') {
+    $idSegnale = null;
+    if (isset($uri[2])) {
+        $idSegnale = (int) $uri[2];
+    }
+
+    $requestMethod = $_SERVER["REQUEST_METHOD"];
+
+    $controller = new SegnaliController($dbConnection, $requestMethod, $idSegnale);
+    $controller->processRequest();
+}else if ($uri[1] == 'categorie'){
+    $idCategoria = null;
+    if (isset($uri[2])) {
+        $idCategoria = (int) $uri[2];
+    }
+
+    $requestMethod = $_SERVER["REQUEST_METHOD"];
+
+    $controller = new CategorieController($dbConnection, $requestMethod, $idCategoria);
+    $controller->processRequest();
+}else{
     header("HTTP/1.1 404 Not Found");
     exit();
 }
 
-$idSegnale = null;
-if (isset($uri[2])) {
-    $idSegnale = (int) $uri[2];
-}
 
-$requestMethod = $_SERVER["REQUEST_METHOD"];
-
-$controller = new SegnaliController($dbConnection, $requestMethod, $idSegnale);
-$controller->processRequest();
 
