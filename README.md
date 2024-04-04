@@ -1,7 +1,5 @@
 # webservice-segnaletica
 
-_Implementazione di un semplice RESTfull Web Service in PHP_
-
 ## Installazione
 
 1. **Creazione del DB**
@@ -28,6 +26,16 @@ Copiare il file configureexample.php nel file config.php quindi aprirlo e valori
 
 2. return a specific record: GET /segnali/{id}
 
+## data input
+1. create a new record: POST /segnali
+```
+{
+    "nome": "value",
+    "descrizione": "value",
+    "id_categoria": value,
+    "percorso_immagine": "value"
+}
+```
 
 ## Note:
 Per avviare il server lanciare dalla cartella del progetto il comando

@@ -50,16 +50,15 @@ class SegnaliGateway {
     public function insert(Array $input)
     {
         $statement = "
-            INSERT INTO person 
-                (id, nome, descrizione, id_categoria, percorso_immagine)
+            INSERT INTO segnali 
+                (nome, descrizione, id_categoria, percorso_immagine)
             VALUES
-                (:id, :nome, :descrizione, :id_categoria, :percorso_immagine);
+                (:nome, :descrizione, :id_categoria, :percorso_immagine);
         ";
 
         try {
             $statement = $this->db->prepare($statement);
             $statement->execute(array(
-                'id' => $input['id'],
                 'nome'  => $input['nome'],
                 'descrizione' => isset($input['descrizione']) ? $input['descrizione'] : null,
                 'id_categoria' => isset($input['id_categoria']) ? $input['id_categoria'] : null,

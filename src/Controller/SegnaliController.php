@@ -108,10 +108,10 @@ class SegnaliController {
 
     private function validateSegnale($input)
     {
-        if (! isset($input['id'])) {
+        if (! isset($input['nome'])) {
             return false;
         }
-        if (! isset($input['nome'])) {
+        if (! isset($input['id_categoria'])) {
             return false;
         }
         return true;
