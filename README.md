@@ -27,7 +27,6 @@ Copiare il file configureexample.php nel file config.php quindi aprirlo e valori
 }
 ```
 
-
 ## data return:
 
 ### Segnali
@@ -52,11 +51,38 @@ Copiare il file configureexample.php nel file config.php quindi aprirlo e valori
 }
 ```
 ### Categorie
+1. create a new record: POST /categorie
 ```
 {
     "nome": value
 }
 ```
+
+## data update
+### Segnali
+1.  Update a specific record: PUT /segnali/[id]
+```
+{
+    "nome": "value",
+    "descrizione": "value",
+    "id_categoria": value,
+    "percorso_immagine": "value"
+}
+```
+### Categorie
+1.  Update a specific record: PUT /categorie/[id]
+```
+{
+    "nome": "value"
+}
+```
+## data delete
+### Segnali
+1.  Delete a specific record: DELETE /segnali/[id]
+
+### Categorie
+1. Delete a specific record: DELETE /categorie/[id]
+
 
 ## Note:
 Per avviare il server lanciare dalla cartella del progetto il comando
@@ -65,5 +91,3 @@ php -S 127.0.0.1:8000 -t public
 ```
 
 Then connect to 127.0.0.1:8000 with Postman and send http requests. Note: when making PUT and POST requests, make sure to set the Body type to raw, then paste the payload in JSON format and set the content type to JSON (application/json).
-
-
